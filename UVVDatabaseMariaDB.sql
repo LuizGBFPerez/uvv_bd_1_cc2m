@@ -51,7 +51,7 @@ CREATE TABLE uvv.trabalha_em #Tabela para armazenar quais funcionários trabalha
                 cpf_funcionario CHAR(11) NOT NULL, #CPF do funcionário. Faz parte da PK dessa tabela, e serve como FK para a tabela funcionário.
                 numero_projeto INTEGER NOT NULL, #Número do projeto. Parte da PK dessa tabela, e é uma FK para a tabela projeto.
                 horas DECIMAL(3,1) NOT NULL, #Horas trabalhadas pelo funcionário neste projeto.
-                PRIMARY KEY (cpf_funcionario, numero_projeto)
+                PRIMARY KEY (cpf_funcionario, numero_projeto) #Expressão que determina as múltiplas PKs da tabela.
 			 );
 			
 
@@ -59,7 +59,7 @@ CREATE TABLE uvv.localizacoes_departamento #Tabela que armazena as possíveis lo
 			 (
                 numero_departamento INTEGER NOT NULL, #Número do departamento. Parte da PK dessa tabela, e serve de FK para a tabela departamento.
                 localizacao VARCHAR(15) NOT NULL, #Localização do departamento. Parte da PK da tabela. Mudado do nome orignal 'local' para evitar confusões do código.
-                PRIMARY KEY (numero_departamento, localizacao),
+                PRIMARY KEY (numero_departamento, localizacao), #Expressão que determina as múltiplas PKs da tabela.
                 CONSTRAINT departamento_localizacoes_departamento_fk
 				FOREIGN KEY (numero_departamento)
 				REFERENCES uvv.departamento(numero_departamento)
@@ -75,7 +75,7 @@ CREATE TABLE uvv.dependente #Tabela que armazena as informações dos dependente
                 sexo CHAR(1), #Sexo do dependente.
                 data_nascimento DATE, #Data de nascimento do dependente.
                 parentesco VARCHAR(15) NOT NULL, #Descrição do parentesco do dependente com o funcionário.
-                PRIMARY KEY (cpf_funcionario, nome_dependente),
+                PRIMARY KEY (cpf_funcionario, nome_dependente), #Expressão que determina as múltiplas PKs da tabela.
                 CONSTRAINT funcionario_dependente_fk  
                 FOREIGN KEY (cpf_funcionario)
 				REFERENCES uvv.funcionario(cpf)
