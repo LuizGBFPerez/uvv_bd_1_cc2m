@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>Projeto Lógico Congresso - Grupo 6 - CC2M</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB1" populated="true" UUID="e354554a-cdfd-421e-8a27-78d18dceff6b" name="locais" objectType="TABLE" physicalName="locais" >
+   <remarks>Tabela que guarda as informações dos locais que hospedam os congressos.</remarks>
+   <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL2" populated="true" UUID="e0d0ef1c-d8fb-4e63-a166-204af3d74ea9" autoIncrement="false" autoIncrementSequenceName="locais_codigo_local_seq" defaultValue="" name="codigo_local" nullable="0" physicalName="codigo_local" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o local agendado para os congressos. PK da tabela, e PFK da tabela telefones_locais.</remarks>
+    </column>
+    <column id="COL3" populated="true" UUID="20ed5cc8-ddb3-4dec-bcb8-4438d0544b45" autoIncrement="false" autoIncrementSequenceName="locais_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do local.</remarks>
+    </column>
+    <column id="COL4" populated="true" UUID="f7e9db01-533c-44ac-8da8-3c7b13b0460f" autoIncrement="false" autoIncrementSequenceName="locais_end_logradouro_seq" defaultValue="" name="end_logradouro" nullable="0" physicalName="end_logradouro" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Logradouro do endereço.</remarks>
+    </column>
+    <column id="COL5" populated="true" UUID="4473965b-434f-4457-a6dc-6e8face61117" autoIncrement="false" autoIncrementSequenceName="locais_end_complemento_seq" defaultValue="" name="end_complemento" nullable="1" physicalName="end_complemento" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Complemento do endereço.</remarks>
+    </column>
+    <column id="COL6" populated="true" UUID="094bd52d-d149-4e85-96da-127c2d9add5b" autoIncrement="false" autoIncrementSequenceName="locais_end_numero_seq" defaultValue="" name="end_numero" nullable="0" physicalName="end_numero" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks>Número do endereço.</remarks>
+    </column>
+    <column id="COL7" populated="true" UUID="68ecfae0-230f-4b6a-9182-d51c623a14fb" autoIncrement="false" autoIncrementSequenceName="locais_end_cep_seq" defaultValue="" name="end_cep" nullable="0" physicalName="end_cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>CEP do endereço.</remarks>
+    </column>
+    <column id="COL8" populated="true" UUID="2f67b89e-9f0e-4ae8-9769-74371ea0dbae" autoIncrement="false" autoIncrementSequenceName="bairros_codigo_bairro_seq" defaultValue="" name="end_codigo_bairro" nullable="0" physicalName="end_codigo_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo do bairro. PK da tabela, e FK das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL9" populated="true" UUID="690efd39-ff10-41b1-976c-38e478226e1d" autoIncrement="false" autoIncrementSequenceName="cidades_codigo_cidade_seq" defaultValue="" name="end_codigo_cidade" nullable="0" physicalName="end_codigo_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo da cidade. PK da tabela, e FK da tabela bairros e das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL10" populated="true" UUID="098ad6b7-c042-45bc-9134-8c5cf2809e17" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq" defaultValue="" name="end_uf" nullable="0" physicalName="end_uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Sigla da unidade federativa dos endereços. PK da tabela, e FK para a tabela cidades, e para as tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL11" populated="true" UUID="c8073326-d10f-40dd-aa89-7bb045364802" autoIncrement="false" autoIncrementSequenceName="locais_tamanho_seq" defaultValue="" name="tamanho" nullable="0" physicalName="tamanho" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Tamanho do espaço que vai sediar o congresso.</remarks>
+    </column>
+    <column id="COL12" populated="true" UUID="4a4b3586-f55a-4c78-94cd-7083bd6eda6d" autoIncrement="false" autoIncrementSequenceName="locais_pessoa_de_contato_seq" defaultValue="" name="pessoa_de_contato" nullable="0" physicalName="pessoa_de_contato" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome da pessoa responsável pelo local.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX13" populated="true" UUID="b1510ece-76b6-44ce-9509-42061505c244" clustered="false" name="codigo_local_pk" physicalName="codigo_local_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC14" populated="true" UUID="285d36fe-830b-4edf-826c-00f243fd6208" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="codigo_local" physicalName="codigo_local" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB15" populated="true" UUID="12bbe877-f589-4deb-bbe3-dff56843c305" name="visitantes" objectType="TABLE" physicalName="visitantes" >
+   <remarks>Tabela que guarda os dados dos visitantes dos congressos.</remarks>
+   <folder id="FOLTAB151" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL16" populated="true" UUID="66e5a1e9-7565-4c0f-8c4c-7b49739d84ca" autoIncrement="false" autoIncrementSequenceName="visitantes_codigo_visitante_seq" defaultValue="" name="codigo_visitante" nullable="0" physicalName="codigo_visitante" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o visitante. PK da tabela, e PFK da tabela telefones_visitantes.</remarks>
+    </column>
+    <column id="COL17" populated="true" UUID="62290158-3d34-48ac-a6ae-93438b3f5a75" autoIncrement="false" autoIncrementSequenceName="visitantes_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do visitante.</remarks>
+    </column>
+    <column id="COL18" populated="true" UUID="f2228265-8eed-47ad-953e-91edef25b7e5" autoIncrement="false" autoIncrementSequenceName="visitantes_email_seq" defaultValue="" name="email" nullable="0" physicalName="email" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>E-mail do visitante.</remarks>
+    </column>
+    <column id="COL19" populated="true" UUID="7bf0aa86-3b64-44ca-8b9c-2a34e44bb533" autoIncrement="false" autoIncrementSequenceName="visitantes_end_logradouro_seq" defaultValue="" name="end_logradouro" nullable="0" physicalName="end_logradouro" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Logradouro do endereço.</remarks>
+    </column>
+    <column id="COL20" populated="true" UUID="a737f2e2-a5d8-4340-a248-d64525f3c5ae" autoIncrement="false" autoIncrementSequenceName="visitantes_end_complemento_seq" defaultValue="" name="end_complemento" nullable="0" physicalName="end_complemento" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Complemento do endereço.</remarks>
+    </column>
+    <column id="COL21" populated="true" UUID="a624635c-3476-44e8-b599-182c0edc819f" autoIncrement="false" autoIncrementSequenceName="visitantes_end_numero_seq" defaultValue="" name="end_numero" nullable="0" physicalName="end_numero" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks>Número do endereço.</remarks>
+    </column>
+    <column id="COL22" populated="true" UUID="c3ca3c2a-8ee8-4a83-8ec8-1688701bfa8f" autoIncrement="false" autoIncrementSequenceName="visitantes_end_cep_seq" defaultValue="" name="end_cep" nullable="0" physicalName="end_cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>CEP do endereço.</remarks>
+    </column>
+    <column id="COL23" populated="true" UUID="49466bf8-7ac2-4217-9244-277060377683" autoIncrement="false" autoIncrementSequenceName="bairros_codigo_bairro_seq_1" defaultValue="" name="end_codigo_bairro" nullable="0" physicalName="end_codigo_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo do bairro. PK da tabela, e FK das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL24" populated="true" UUID="afee1334-759a-4383-acae-c5c115f20ede" autoIncrement="false" autoIncrementSequenceName="cidades_codigo_cidade_seq_1" defaultValue="" name="end_codigo_cidade" nullable="0" physicalName="end_codigo_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo da cidade. PK da tabela, e FK da tabela bairros e das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL25" populated="true" UUID="ee8d6fd8-9a1a-4395-bb7b-e972aa0a5065" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq_1" defaultValue="" name="end_uf" nullable="0" physicalName="end_uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Sigla da unidade federativa dos endereços. PK da tabela, e FK para a tabela cidades, e para as tabelas que requerem endereços.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB153" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB152" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB154" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX26" populated="true" UUID="52148228-f874-466c-b272-ebff83150f33" clustered="false" name="codigo_visitantes_pk" physicalName="codigo_visitantes_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC27" populated="true" UUID="e2b240a8-6627-4ea2-90d0-6049d9ddb87d" ascendingOrDescending="UNSPECIFIED" column-ref="COL16" name="codigo_visitante" physicalName="codigo_visitante" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB28" populated="true" UUID="7b3b5d31-c550-4326-8aac-676cfc7ad01c" name="congressos" objectType="TABLE" physicalName="congressos" >
+   <remarks>Tabela que contém os dados referentes aos congressos em si.</remarks>
+   <folder id="FOLTAB281" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL29" populated="true" UUID="c862e7f7-e516-42be-b944-011de87f8f2e" autoIncrement="false" autoIncrementSequenceName="congressos_codigo_congresso_seq" defaultValue="" name="codigo_congresso" nullable="0" physicalName="codigo_congresso" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Codigo que categoriza o congresso. PK da tabela.</remarks>
+    </column>
+    <column id="COL30" populated="true" UUID="50a889a3-ab08-4577-9aca-cfba9d251f83" autoIncrement="false" autoIncrementSequenceName="congressos_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do congresso.</remarks>
+    </column>
+    <column id="COL31" populated="true" UUID="8edca01a-a1d5-41c1-94d6-e8decf03725d" autoIncrement="false" autoIncrementSequenceName="congressos_data_inicio_seq" defaultValue="" name="data_inicio" nullable="0" physicalName="data_inicio" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Data de início do congresso.</remarks>
+    </column>
+    <column id="COL32" populated="true" UUID="cbd7722d-a2d4-4b9a-8d1c-d241dd0122ae" autoIncrement="false" autoIncrementSequenceName="congressos_data_fim_seq" defaultValue="" name="data_fim" nullable="0" physicalName="data_fim" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Data de término do congresso.</remarks>
+    </column>
+    <column id="COL33" populated="true" UUID="c7a1a9f4-0e45-4746-8442-21e440bfabca" autoIncrement="false" autoIncrementSequenceName="congressos_horario_inicio_seq" defaultValue="" name="horario_inicio" nullable="0" physicalName="horario_inicio" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+     <remarks>Horário de início do congresso.</remarks>
+    </column>
+    <column id="COL34" populated="true" UUID="210ed812-9a68-4167-b2cc-3b95acfc70a5" autoIncrement="false" autoIncrementSequenceName="congressos_horario_fim_seq" defaultValue="" name="horario_fim" nullable="0" physicalName="horario_fim" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+     <remarks>Horário de término do congresso.</remarks>
+    </column>
+    <column id="COL35" populated="true" UUID="c3a5a641-5f56-4dff-acd1-586aaeb20915" autoIncrement="false" autoIncrementSequenceName="congressos_publico_alvo_seq" defaultValue="" name="publico_alvo" nullable="0" physicalName="publico_alvo" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Descrição do público-alvo do congresso.</remarks>
+    </column>
+    <column id="COL36" populated="true" UUID="4dbfd883-8ebc-4004-be3c-6bb18339957a" autoIncrement="false" autoIncrementSequenceName="programas_codigo_programas_seq" defaultValue="" name="codigo_programas" nullable="0" physicalName="codigo_programas" precision="15" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica a programação do congresso. PK da tabela.</remarks>
+    </column>
+    <column id="COL37" populated="true" UUID="17d16e8b-424e-4fa9-bbec-08e4b5ccf7eb" autoIncrement="false" autoIncrementSequenceName="visitantes_codigo_visitante_seq_1" defaultValue="" name="codigo_visitante" nullable="0" physicalName="codigo_visitante" precision="15" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o visitante. PK da tabela, e PFK da tabela telefones_visitantes.</remarks>
+    </column>
+    <column id="COL38" populated="true" UUID="24ffcea9-12e6-4119-b60a-313225d62a12" autoIncrement="false" autoIncrementSequenceName="organizadores_codigo_organizadores_seq" defaultValue="" name="codigo_organizadores" nullable="0" physicalName="codigo_organizadores" precision="15" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o organizador. PK da tabela.</remarks>
+    </column>
+    <column id="COL39" populated="true" UUID="2a458c15-9a10-42cb-aa43-cb3b2948fb5e" autoIncrement="false" autoIncrementSequenceName="congressos_descricao_seq" defaultValue="" name="descricao" nullable="0" physicalName="descricao" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Descrição sobre o congresso.</remarks>
+    </column>
+    <column id="COL40" populated="true" UUID="46100b41-8d8d-4832-b064-16cdb023a654" autoIncrement="false" autoIncrementSequenceName="categorias_codigo_categoria_seq" defaultValue="" name="codigo_categoria" nullable="0" physicalName="codigo_categoria" precision="15" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que determina a categoria. PK da tabela.</remarks>
+    </column>
+    <column id="COL41" populated="true" UUID="2c03b8fb-7a77-459e-944d-5d451fa8833e" autoIncrement="false" autoIncrementSequenceName="locais_codigo_local_seq_1" defaultValue="" name="codigo_local" nullable="0" physicalName="codigo_local" precision="15" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o local agendado para os congressos. PK da tabela, e PFK da tabela telefones_locais.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB283" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB282" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB284" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX42" populated="true" UUID="248d5551-388a-4852-822f-83652f560e80" clustered="false" name="codigo_congressos_pk" physicalName="codigo_congressos_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC43" populated="true" UUID="d19252be-3fad-47d6-bb91-34176344140a" ascendingOrDescending="UNSPECIFIED" column-ref="COL29" name="codigo_congresso" physicalName="codigo_congresso" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB44" populated="true" UUID="d86f6c75-c257-48ac-99fc-ccc1569aeff2" name="categorias" objectType="TABLE" physicalName="categorias" >
+   <remarks>Tabela que contém as categorias que classificam os congressos.</remarks>
+   <folder id="FOLTAB441" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL45" populated="true" UUID="3eb016bf-c9f5-428f-94ec-3eb7150286f4" autoIncrement="false" autoIncrementSequenceName="categorias_codigo_categoria_seq_1" defaultValue="" name="codigo_categoria" nullable="0" physicalName="codigo_categoria" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que determina a categoria. PK da tabela.</remarks>
+    </column>
+    <column id="COL46" populated="true" UUID="4827419a-5456-4a23-8225-8ce292eed07f" autoIncrement="false" autoIncrementSequenceName="categorias_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome da categoria.</remarks>
+    </column>
+    <column id="COL47" populated="true" UUID="3fb15d64-0294-486d-a7f1-9c9ae6783683" autoIncrement="false" autoIncrementSequenceName="categorias_valor_seq" defaultValue="" name="valor" nullable="0" physicalName="valor" precision="8" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
+     <remarks>Valor pago para a categoria.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB443" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB442" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB444" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX48" populated="true" UUID="b5339e46-d3c5-40f8-b77c-05148bb5c85b" clustered="false" name="codigo_categoria_pk" physicalName="codigo_categoria_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC49" populated="true" UUID="45e82edf-459f-442e-92eb-f4743f45ae14" ascendingOrDescending="UNSPECIFIED" column-ref="COL45" name="codigo_categoria" physicalName="codigo_categoria" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB50" populated="true" UUID="97b9205b-84e5-483b-bf5b-8bff458ec451" name="patrocinadores" objectType="TABLE" physicalName="patrocinadores" >
+   <remarks>Tabela que contém os dados dos patrocinadores dos congressos.</remarks>
+   <folder id="FOLTAB501" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL51" populated="true" UUID="1cd323bd-51f7-45bc-ac6d-ae46f741a158" autoIncrement="false" autoIncrementSequenceName="patrocinadores_codigo_patrocinador_seq" defaultValue="" name="codigo_patrocinador" nullable="0" physicalName="codigo_patrocinador" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o patrocinador. PK da tabela, e serve como PFK para a tabela telefones_patrocinadores.</remarks>
+    </column>
+    <column id="COL52" populated="true" UUID="7107b7ba-0bb6-474c-97d7-ac1335c85237" autoIncrement="false" autoIncrementSequenceName="patrocinadores_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do patrocinador.</remarks>
+    </column>
+    <column id="COL53" populated="true" UUID="8d221408-f4c2-49fb-8673-74478c32a530" autoIncrement="false" autoIncrementSequenceName="patrocinadores_ramo_seq" defaultValue="" name="ramo" nullable="0" physicalName="ramo" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Ramo de atividade do patrocinador.</remarks>
+    </column>
+    <column id="COL54" populated="true" UUID="f9d8b58b-cb41-4c8a-9131-6d970bf49b51" autoIncrement="false" autoIncrementSequenceName="patrocinadores_end_logradouro_seq" defaultValue="" name="end_logradouro" nullable="0" physicalName="end_logradouro" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Logradouro do endereço.</remarks>
+    </column>
+    <column id="COL55" populated="true" UUID="d72aa826-df5a-494b-be5b-eb15c95f7043" autoIncrement="false" autoIncrementSequenceName="patrocinadores_end_complemento_seq" defaultValue="" name="end_complemento" nullable="1" physicalName="end_complemento" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Complemento do endereço.</remarks>
+    </column>
+    <column id="COL56" populated="true" UUID="6512a87c-d38e-4b63-b611-c71dde35030c" autoIncrement="false" autoIncrementSequenceName="patrocinadores_end_numero_seq" defaultValue="" name="end_numero" nullable="0" physicalName="end_numero" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks>Número do endereço.</remarks>
+    </column>
+    <column id="COL57" populated="true" UUID="e70c0302-83b2-4f42-837c-d73d256f395e" autoIncrement="false" autoIncrementSequenceName="patrocinadores_end_cep_seq" defaultValue="" name="end_cep" nullable="0" physicalName="end_cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>CEP do endereço.</remarks>
+    </column>
+    <column id="COL58" populated="true" UUID="856af364-566a-4e76-b53e-54ba03790220" autoIncrement="false" autoIncrementSequenceName="bairros_codigo_bairro_seq_2" defaultValue="" name="end_codigo_bairro" nullable="0" physicalName="end_codigo_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo do bairro. PK da tabela, e FK das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL59" populated="true" UUID="205f6791-2488-4365-9a95-4aeb16e3870c" autoIncrement="false" autoIncrementSequenceName="cidades_codigo_cidade_seq_2" defaultValue="" name="end_codigo_cidade" nullable="0" physicalName="end_codigo_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo da cidade. PK da tabela, e FK da tabela bairros e das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL60" populated="true" UUID="842ece5c-e738-440a-be0a-b9d413c549b3" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq_2" defaultValue="" name="end_uf" nullable="0" physicalName="end_uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Sigla da unidade federativa dos endereços. PK da tabela, e FK para a tabela cidades, e para as tabelas que requerem endereços.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB503" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB502" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB504" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX61" populated="true" UUID="bb7d9ff3-2433-46bd-a410-a691c19c9743" clustered="false" name="codigo_patrocinador_pk" physicalName="codigo_patrocinador_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC62" populated="true" UUID="921cc1ca-c94a-4855-a902-181edcf45b8f" ascendingOrDescending="UNSPECIFIED" column-ref="COL51" name="codigo_patrocinador" physicalName="codigo_patrocinador" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB63" populated="true" UUID="e8498ecf-f755-48a5-b077-7d37e1564336" name="patrocinio" objectType="TABLE" physicalName="patrocinio" >
+   <remarks>Tabela que serve de intermediária para a relação (n,n) entre patrocinadores e congressos.</remarks>
+   <folder id="FOLTAB631" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL64" populated="true" UUID="c0ab0f82-9020-48b8-a870-80d51bf6975d" autoIncrement="false" autoIncrementSequenceName="patrocinio_codigo_patrocinador_seq" defaultValue="" name="codigo_patrocinador" nullable="0" physicalName="codigo_patrocinador" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o patrocinador. PK da tabela, e serve como PFK para a tabela telefones_patrocinadores.</remarks>
+    </column>
+    <column id="COL65" populated="true" UUID="eceb53ed-6bee-4b6a-b89b-4a3fc322a130" autoIncrement="false" autoIncrementSequenceName="patrocinio_codigo_congresso_seq" defaultValue="" name="codigo_congresso" nullable="0" physicalName="codigo_congresso" precision="15" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Codigo que categoriza o congresso. PK da tabela.</remarks>
+    </column>
+    <column id="COL66" populated="true" UUID="dfc44ee7-4845-438f-9541-58bdf4f8090f" autoIncrement="false" autoIncrementSequenceName="patrocinio_valor_seq" defaultValue="" name="valor" nullable="0" physicalName="valor" precision="8" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
+     <remarks>Valor do patrocínio pago pelo patrocinador ao congresso.</remarks>
+    </column>
+    <column id="COL67" populated="true" UUID="2b09a4f4-bc85-4b83-a8d2-584ba3323e40" autoIncrement="false" autoIncrementSequenceName="patrocinio_forma_de_pagamento_seq" defaultValue="" name="forma_de_pagamento" nullable="0" physicalName="forma_de_pagamento" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Forma de pagamento.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB633" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB632" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB634" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX68" populated="true" UUID="87541634-63f7-41d0-b47d-0db62eca218e" clustered="false" name="codigo_patrocinador_pfk" physicalName="codigo_patrocinador_pfk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC69" populated="true" UUID="feeaa964-ada5-44a6-98d9-15ae5fc3e731" ascendingOrDescending="UNSPECIFIED" column-ref="COL64" name="codigo_patrocinador" physicalName="codigo_patrocinador" />
+     <index-column id="IDC70" populated="true" UUID="1329fca8-eef4-4151-acae-c8624466dd23" ascendingOrDescending="UNSPECIFIED" column-ref="COL65" name="codigo_congresso" physicalName="codigo_congresso" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB71" populated="true" UUID="23be38b3-bd4f-4048-9de8-db5159dd1779" name="organizadores" objectType="TABLE" physicalName="organizadores" >
+   <remarks>Tabela que guarda as informações dos organizadores dos congressos.</remarks>
+   <folder id="FOLTAB711" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL72" populated="true" UUID="c72a81a9-1d28-4b20-8f5b-b94a0e11c827" autoIncrement="false" autoIncrementSequenceName="organizadores_codigo_organizadores_seq_1" defaultValue="" name="codigo_organizadores" nullable="0" physicalName="codigo_organizadores" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o organizador. PK da tabela.</remarks>
+    </column>
+    <column id="COL73" populated="true" UUID="69f58aa0-9974-419d-ae17-bb1d63c91cc5" autoIncrement="false" autoIncrementSequenceName="organizadores_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do organizador.</remarks>
+    </column>
+    <column id="COL74" populated="true" UUID="39b2b042-10a1-4b83-a887-aae9ad2ec0f4" autoIncrement="false" autoIncrementSequenceName="organizadores_atribuicao_seq" defaultValue="" name="atribuicao" nullable="0" physicalName="atribuicao" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Atribuição do organizador.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB713" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB712" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB714" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX75" populated="true" UUID="90382cba-cf96-4417-9a09-3b0721881859" clustered="false" name="codigo_organizador_pk" physicalName="codigo_organizador_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC76" populated="true" UUID="752c2911-8fbc-46f6-a509-24bfd545a261" ascendingOrDescending="UNSPECIFIED" column-ref="COL72" name="codigo_organizadores" physicalName="codigo_organizadores" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB77" populated="true" UUID="d030509f-1d86-4c32-9d7b-3725cf8709d1" name="programas" objectType="TABLE" physicalName="programas" >
+   <remarks>Tabela que guarda as programações dos congressos.</remarks>
+   <folder id="FOLTAB771" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL78" populated="true" UUID="899728ae-c4cf-4e9e-a82a-689ea5397b44" autoIncrement="false" autoIncrementSequenceName="programas_codigo_programas_seq_1" defaultValue="" name="codigo_programas" nullable="0" physicalName="codigo_programas" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica a programação do congresso. PK da tabela.</remarks>
+    </column>
+    <column id="COL79" populated="true" UUID="37944b8e-893d-4689-a676-8fe5ff13bcda" autoIncrement="false" autoIncrementSequenceName="programas_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do programa.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB773" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB772" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB774" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX80" populated="true" UUID="b7c6dbd9-a5d6-4d9d-b4c5-5e55a472be4d" clustered="false" name="codigo_programa_pk" physicalName="codigo_programa_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC81" populated="true" UUID="27512054-5c01-4266-b3c9-62505dfa77d6" ascendingOrDescending="UNSPECIFIED" column-ref="COL78" name="codigo_programas" physicalName="codigo_programas" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB82" populated="true" UUID="53899a3b-baf5-4e29-af46-b93cbb30927e" name="palestrantes" objectType="TABLE" physicalName="palestrantes" >
+   <remarks>Tabela que contém os dados dos palestrantes.</remarks>
+   <folder id="FOLTAB821" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL83" populated="true" UUID="cea90354-01ca-42af-935d-4960b251ae69" autoIncrement="false" autoIncrementSequenceName="palestrantes_codigo_palestrante_seq" defaultValue="" name="codigo_palestrante" nullable="0" physicalName="codigo_palestrante" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o palestrante. PK da tabela, e PFK da tabela telefones_palestrantes.</remarks>
+    </column>
+    <column id="COL84" populated="true" UUID="3d91370b-cb23-4ab9-8ed1-d3114becf690" autoIncrement="false" autoIncrementSequenceName="palestrantes_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do palestrante.</remarks>
+    </column>
+    <column id="COL85" populated="true" UUID="75e57554-5562-447f-8fc9-d7a07b87b5f9" autoIncrement="false" autoIncrementSequenceName="palestrantes_end_logradouro_seq" defaultValue="" name="end_logradouro" nullable="0" physicalName="end_logradouro" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Logradouro do endereço.</remarks>
+    </column>
+    <column id="COL86" populated="true" UUID="c8068a6b-90d5-4957-bf90-c49880dd54a9" autoIncrement="false" autoIncrementSequenceName="palestrantes_end_complemento_seq" defaultValue="" name="end_complemento" nullable="1" physicalName="end_complemento" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Complemento do endereço.</remarks>
+    </column>
+    <column id="COL87" populated="true" UUID="0a393be0-aa37-40b4-b128-0fd0e093f807" autoIncrement="false" autoIncrementSequenceName="palestrantes_end_numero_seq" defaultValue="" name="end_numero" nullable="0" physicalName="end_numero" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="5" userDefinedTypeUUID="69fb547f-e14c-4748-9746-4c0e9e94eb52" >
+     <remarks>Número do endereço.</remarks>
+    </column>
+    <column id="COL88" populated="true" UUID="19b418c4-3d20-482c-a95a-77b096d4c5f3" autoIncrement="false" autoIncrementSequenceName="palestrantes_end_cep_seq" defaultValue="" name="end_cep" nullable="0" physicalName="end_cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>CEP do endereço.</remarks>
+    </column>
+    <column id="COL89" populated="true" UUID="f7656aac-c627-4496-9afd-76b2a194ef30" autoIncrement="false" autoIncrementSequenceName="bairros_codigo_bairro_seq_3" defaultValue="" name="end_codigo_bairro" nullable="0" physicalName="end_codigo_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo do bairro. PK da tabela, e FK das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL90" populated="true" UUID="7a0ddc6e-cc33-4325-9451-6e8e74bbca20" autoIncrement="false" autoIncrementSequenceName="cidades_codigo_cidade_seq_3" defaultValue="" name="end_codigo_cidade" nullable="0" physicalName="end_codigo_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo da cidade. PK da tabela, e FK da tabela bairros e das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL91" populated="true" UUID="74469e46-c0aa-408f-81de-91279c34716d" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq_3" defaultValue="" name="end_uf" nullable="0" physicalName="end_uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Sigla da unidade federativa dos endereços. PK da tabela, e FK para a tabela cidades, e para as tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL92" populated="true" UUID="a42e917f-94be-422e-b8a2-f10b6401bf08" autoIncrement="false" autoIncrementSequenceName="palestrantes_email_seq" defaultValue="" name="email" nullable="0" physicalName="email" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>E-mail dos palestrantes.</remarks>
+    </column>
+    <column id="COL93" populated="true" UUID="ec6d8810-709b-42d8-909d-20f8a6985b37" autoIncrement="false" autoIncrementSequenceName="palestrantes_curriculum_seq" defaultValue="" name="curriculum" nullable="0" physicalName="curriculum" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Descrição do curriculum do palestrante.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB823" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB822" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB824" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX94" populated="true" UUID="08fc88da-8d81-4a35-b0fa-64c33441ee20" clustered="false" name="codigo_palestrante_pk" physicalName="codigo_palestrante_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC95" populated="true" UUID="0e7f528b-4453-4f56-8eec-2edc3debe53b" ascendingOrDescending="UNSPECIFIED" column-ref="COL83" name="codigo_palestrante" physicalName="codigo_palestrante" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB96" populated="true" UUID="f3f2ac66-0f92-4624-a247-16eff12113e1" name="palestras" objectType="TABLE" physicalName="palestras" >
+   <remarks>Tabela que serve de intermediária para a relação (n,n) entre palestrantes e programas.</remarks>
+   <folder id="FOLTAB961" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL97" populated="true" UUID="0b86f487-0f45-4672-949e-ba2ea5f4bbd8" autoIncrement="false" autoIncrementSequenceName="programas_codigo_programas_seq_2" defaultValue="" name="codigo_programas" nullable="0" physicalName="codigo_programas" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica a programação do congresso. PK da tabela.</remarks>
+    </column>
+    <column id="COL98" populated="true" UUID="1eb2d7bf-b381-4785-bffd-1276b5259974" autoIncrement="false" autoIncrementSequenceName="palestrantes_codigo_palestrante_seq_1" defaultValue="" name="codigo_palestrante" nullable="0" physicalName="codigo_palestrante" precision="15" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o palestrante. PK da tabela, e PFK da tabela telefones_palestrantes.</remarks>
+    </column>
+    <column id="COL99" populated="true" UUID="16f000e2-98c7-492d-8cc3-6a7d56d486b6" autoIncrement="false" autoIncrementSequenceName="palestras_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome da palestra.</remarks>
+    </column>
+    <column id="COL100" populated="true" UUID="5bc43b7e-c918-4ec8-acac-8900ded2d2b2" autoIncrement="false" autoIncrementSequenceName="palestras_classificacao_seq" defaultValue="" name="classificacao" nullable="0" physicalName="classificacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
+     <remarks>Classificação da palestra.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB963" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB962" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB964" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX101" populated="true" UUID="92b15f29-cd7a-40af-a14e-3422aaf9dfbd" clustered="false" name="codigo_programa_pfk" physicalName="codigo_programa_pfk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC102" populated="true" UUID="82087889-35c8-406d-8efc-1a0b6e414e9f" ascendingOrDescending="UNSPECIFIED" column-ref="COL97" name="codigo_programas" physicalName="codigo_programas" />
+     <index-column id="IDC103" populated="true" UUID="4654896e-0427-4078-bed3-b3b737dec570" ascendingOrDescending="UNSPECIFIED" column-ref="COL98" name="codigo_palestrante" physicalName="codigo_palestrante" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB104" populated="true" UUID="7861122b-0873-43ab-895e-915ddb084365" name="bairros" objectType="TABLE" physicalName="bairros" >
+   <remarks>Tabela que contém os dados dos bairros dos endereços.</remarks>
+   <folder id="FOLTAB1041" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL105" populated="true" UUID="fab57329-9f93-4e26-a9e0-3bd043ebdb51" autoIncrement="false" autoIncrementSequenceName="bairros_codigo_bairro_seq_4" defaultValue="" name="codigo_bairro" nullable="0" physicalName="codigo_bairro" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo do bairro. PK da tabela, e FK das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL106" populated="true" UUID="d442c5b2-ca41-4954-aaf6-339f4ac4441b" autoIncrement="false" autoIncrementSequenceName="bairros_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome do bairro.</remarks>
+    </column>
+    <column id="COL107" populated="true" UUID="5e028a08-d571-4362-bfde-5c2b9200e0e5" autoIncrement="false" autoIncrementSequenceName="cidades_codigo_cidade_seq_4" defaultValue="" name="codigo_cidade" nullable="0" physicalName="codigo_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo da cidade. PK da tabela, e FK da tabela bairros e das tabelas que requerem endereços.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1043" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1042" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1044" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX108" populated="true" UUID="f5952e33-f94e-43d5-a3a3-0f984c950844" clustered="false" name="codigo_bairro_pk" physicalName="codigo_bairro_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC109" populated="true" UUID="df939453-87c1-4b4c-9efa-db212baed32d" ascendingOrDescending="UNSPECIFIED" column-ref="COL105" name="codigo_bairro" physicalName="codigo_bairro" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB110" populated="true" UUID="58c03072-a10a-452c-a4a6-ce119464c521" name="cidades" objectType="TABLE" physicalName="cidades" >
+   <remarks>Tabela que guarda os dados das cidades dos endereços.</remarks>
+   <folder id="FOLTAB1101" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL111" populated="true" UUID="752a2a25-3bf0-45ea-a14b-0647a4b5645e" autoIncrement="false" autoIncrementSequenceName="cidades_codigo_cidade_seq_5" defaultValue="" name="codigo_cidade" nullable="0" physicalName="codigo_cidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Codigo da cidade. PK da tabela, e FK da tabela bairros e das tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL112" populated="true" UUID="4ce6bea7-daac-4689-912d-ccc772a1d1e5" autoIncrement="false" autoIncrementSequenceName="cidades_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome das cidades.</remarks>
+    </column>
+    <column id="COL113" populated="true" UUID="5e40cbfb-acfc-4ee5-89fa-ee5b2a657bb6" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq_4" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Sigla da unidade federativa dos endereços. PK da tabela, e FK para a tabela cidades, e para as tabelas que requerem endereços.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1103" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1102" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1104" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX114" populated="true" UUID="63bbfc94-e5b0-4579-9440-b814da894452" clustered="false" name="codigo_cidade_pk" physicalName="codigo_cidade_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC115" populated="true" UUID="1be37ad7-8b84-4d63-8b42-6cf447f60a24" ascendingOrDescending="UNSPECIFIED" column-ref="COL111" name="codigo_cidade" physicalName="codigo_cidade" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB116" populated="true" UUID="a522eb8e-16f5-4708-a726-3dd9dce7a0bd" name="uf" objectType="TABLE" physicalName="uf" >
+   <remarks>Tabela que guarda os dados das unidades federativas dos endereços.</remarks>
+   <folder id="FOLTAB1161" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL117" populated="true" UUID="b81b0731-22ed-43e3-9e9f-25fa692d6276" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq_5" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>Sigla da unidade federativa dos endereços. PK da tabela, e FK para a tabela cidades, e para as tabelas que requerem endereços.</remarks>
+    </column>
+    <column id="COL118" populated="true" UUID="61a756c0-6a02-4b28-a7b2-053a459c9a2d" autoIncrement="false" autoIncrementSequenceName="uf_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Nome das unidades federativas.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1163" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1162" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1164" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX119" populated="true" UUID="70d87138-36dc-4bb1-a753-6336d57b0f83" clustered="false" name="uf_pk" physicalName="uf_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC120" populated="true" UUID="00c0e258-fd34-43a9-86fa-879891f98408" ascendingOrDescending="UNSPECIFIED" column-ref="COL117" name="uf" physicalName="uf" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB121" populated="true" UUID="13cc18e9-eb5d-4f10-868d-868f4ef232ed" name="telefones_locais" objectType="TABLE" physicalName="telefones_locais" >
+   <remarks>Tabela que guarda todos os possíveis telefones dos locais.</remarks>
+   <folder id="FOLTAB1211" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL122" populated="true" UUID="c53c2632-8d8e-41d6-bdbe-1f014f6019de" autoIncrement="false" autoIncrementSequenceName="locais_codigo_local_seq_2" defaultValue="" name="codigo_local" nullable="0" physicalName="codigo_local" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o local agendado para os congressos. PK da tabela.</remarks>
+    </column>
+    <column id="COL123" populated="true" UUID="ac73c267-1721-4deb-9a9e-794cbe2b0fb3" autoIncrement="false" autoIncrementSequenceName="telefones_locais_telefone_local_1_seq" defaultValue="" name="telefone_local" nullable="0" physicalName="telefone_local" precision="11" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Telefone do local. Parte da PK da tabela.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1213" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1212" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1214" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX124" populated="true" UUID="866c60aa-385b-4072-b233-93db4cf76a0b" clustered="false" name="telefone_local_1_pk" physicalName="telefone_local_1_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC125" populated="true" UUID="a6bdd880-3852-4a34-9650-e2d51c9e5880" ascendingOrDescending="UNSPECIFIED" column-ref="COL122" name="codigo_local" physicalName="codigo_local" />
+     <index-column id="IDC126" populated="true" UUID="2aaabe37-d266-420d-9555-c60f0ed35bf9" ascendingOrDescending="UNSPECIFIED" column-ref="COL123" name="telefone_local" physicalName="telefone_local" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB127" populated="true" UUID="ee53f758-71a2-4e0e-a3e5-d5a9ada6dc9c" name="telefones_visitantes" objectType="TABLE" physicalName="telefones_visitantes" >
+   <remarks>Tabela que contém os números de telefones dos visitantes.</remarks>
+   <folder id="FOLTAB1271" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL128" populated="true" UUID="73047741-5247-4d9a-a120-19459c35f1ac" autoIncrement="false" autoIncrementSequenceName="visitantes_codigo_visitante_seq_2" defaultValue="" name="codigo_visitante" nullable="0" physicalName="codigo_visitante" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o visitante. PK da tabela, e PFK da tabela telefones_visitantes.</remarks>
+    </column>
+    <column id="COL129" populated="true" UUID="1bbc95a1-0991-4330-904e-ef5288933be9" autoIncrement="false" autoIncrementSequenceName="telefones_visitantes_telefone_visitante_1_seq" defaultValue="" name="telefone_visitante" nullable="0" physicalName="telefone_visitante" precision="11" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Telefone do visitante. Parte da PK da tabela.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1273" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1272" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1274" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX130" populated="true" UUID="00b7bfb2-f908-4323-a7de-4c444cd5253f" clustered="false" name="telefone_visitante_1_pk" physicalName="telefone_visitante_1_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC131" populated="true" UUID="6a75ce56-00a7-435f-91f4-2f88076e36fb" ascendingOrDescending="UNSPECIFIED" column-ref="COL128" name="codigo_visitante" physicalName="codigo_visitante" />
+     <index-column id="IDC132" populated="true" UUID="e2e9ab2a-7487-48df-b1f1-4a4dc4ef1932" ascendingOrDescending="UNSPECIFIED" column-ref="COL129" name="telefone_visitante" physicalName="telefone_visitante" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB133" populated="true" UUID="4181bbb3-e16f-40d7-a3d4-6680a2d62adf" name="telefones_organizadores" objectType="TABLE" physicalName="telefones_organizadores" >
+   <remarks>Tabela que guarda os telefones de contato dos organizadores.</remarks>
+   <folder id="FOLTAB1331" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL134" populated="true" UUID="d89fa5df-ace1-4e82-90ed-611da2013c24" autoIncrement="false" autoIncrementSequenceName="organizadores_codigo_organizadores_seq_2" defaultValue="" name="codigo_organizadores" nullable="0" physicalName="codigo_organizadores" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o organizador. PK da tabela.</remarks>
+    </column>
+    <column id="COL135" populated="true" UUID="2574a190-a7cd-457c-b534-d6081d5df532" autoIncrement="false" autoIncrementSequenceName="telefones_organizadores_telefone_organizador_1_seq" defaultValue="" name="telefone_organizador" nullable="0" physicalName="telefone_organizador" precision="11" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Telefone do organizador. Parte da PK da tabela.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1333" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1332" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1334" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX136" populated="true" UUID="4478e3fb-09f5-4158-889a-bccb7ed2ce9e" clustered="false" name="telefones_organizadores_pk" physicalName="telefones_organizadores_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC137" populated="true" UUID="6c9c7fe7-1fab-4587-ae46-665247412590" ascendingOrDescending="UNSPECIFIED" column-ref="COL134" name="codigo_organizadores" physicalName="codigo_organizadores" />
+     <index-column id="IDC138" populated="true" UUID="a1a0033e-f2e6-4213-a370-5155c098f561" ascendingOrDescending="UNSPECIFIED" column-ref="COL135" name="telefone_organizador" physicalName="telefone_organizador" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB139" populated="true" UUID="c77af21e-6569-4bf7-936e-13f19509e92a" name="telefones_palestrantes" objectType="TABLE" physicalName="telefones_palestrantes" >
+   <remarks>Tabela que contém os números de telefone dos palestrantes.</remarks>
+   <folder id="FOLTAB1391" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL140" populated="true" UUID="900958d6-3a47-4b65-a6b7-16a0419617c4" autoIncrement="false" autoIncrementSequenceName="palestrantes_codigo_palestrante_seq_2" defaultValue="" name="codigo_palestrante" nullable="0" physicalName="codigo_palestrante" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o palestrante. PK da tabela.</remarks>
+    </column>
+    <column id="COL141" populated="true" UUID="6a25979c-d2f5-4ecb-8eb6-9bf35c3b1c3e" autoIncrement="false" autoIncrementSequenceName="telefones_palestrantes_telefone_palestrante_1_seq" defaultValue="" name="telefone_palestrante" nullable="0" physicalName="telefone_palestrante" precision="11" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>Telefone do palestrante. Parte da PK da tabela.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1393" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1392" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1394" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX142" populated="true" UUID="199a2dcc-a366-4962-9d7b-0409bbdd2a96" clustered="false" name="telefone_palestrante_1_pk" physicalName="telefone_palestrante_1_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC143" populated="true" UUID="769c2782-6ffb-40f7-a25e-517bb3323272" ascendingOrDescending="UNSPECIFIED" column-ref="COL140" name="codigo_palestrante" physicalName="codigo_palestrante" />
+     <index-column id="IDC144" populated="true" UUID="b0ae4056-61f6-4e63-b087-8f9293870b25" ascendingOrDescending="UNSPECIFIED" column-ref="COL141" name="telefone_palestrante" physicalName="telefone_palestrante" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB145" populated="true" UUID="5ccfec82-9ccc-4346-aba4-cce7d72f9b95" name="materiais" objectType="TABLE" physicalName="materiais" >
+   <remarks>Tabela que contém os materiais necessários para as palestras.</remarks>
+   <folder id="FOLTAB1451" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL146" populated="true" UUID="e00128b4-e7a9-4fc5-9357-d2f99342154d" autoIncrement="false" autoIncrementSequenceName="programas_codigo_programas_seq_3" defaultValue="" name="codigo_programas" nullable="0" physicalName="codigo_programas" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica a programação do congresso. PK da tabela.</remarks>
+    </column>
+    <column id="COL147" populated="true" UUID="c377550a-aa98-4aa7-8a4d-0785219a4bd6" autoIncrement="false" autoIncrementSequenceName="palestrantes_codigo_palestrante_seq_3" defaultValue="" name="codigo_palestrante" nullable="0" physicalName="codigo_palestrante" precision="15" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica o palestrante. PK da tabela, e PFK da tabela telefones_palestrantes.</remarks>
+    </column>
+    <column id="COL148" populated="true" UUID="8058e12b-5e19-4f06-82fc-2d61a91dd1ac" autoIncrement="false" autoIncrementSequenceName="materiais_material_1_seq" defaultValue="" name="material" nullable="0" physicalName="material" precision="50" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Material necessário para a palestra.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1453" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1452" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1454" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX149" populated="true" UUID="13c0c27e-64dc-4883-bcee-cde2d9bae4ee" clustered="false" name="nome_pfk" physicalName="nome_pfk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC150" populated="true" UUID="286d6e22-5efa-4203-b621-1ab1d11d574b" ascendingOrDescending="UNSPECIFIED" column-ref="COL146" name="codigo_programas" physicalName="codigo_programas" />
+     <index-column id="IDC151" populated="true" UUID="7cb0af36-f647-46a4-841e-4ff69c28c5e7" ascendingOrDescending="UNSPECIFIED" column-ref="COL147" name="codigo_palestrante" physicalName="codigo_palestrante" />
+     <index-column id="IDC152" populated="true" UUID="f73412c4-09b1-44d7-92e2-9b2e7c3e72d3" ascendingOrDescending="UNSPECIFIED" column-ref="COL148" name="material" physicalName="material" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB153" populated="true" UUID="04c34878-93c9-4a51-a7c6-a7f0d7a5a0bc" name="informacoes_programas" objectType="TABLE" physicalName="informacoes_programas" >
+   <remarks>Tabela que contém informações sobre os programas dos congressos.</remarks>
+   <folder id="FOLTAB1531" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL154" populated="true" UUID="d65dc753-667b-401a-8993-6fce23822968" autoIncrement="false" autoIncrementSequenceName="programas_codigo_programas_seq_4" defaultValue="" name="codigo_programas" nullable="0" physicalName="codigo_programas" precision="15" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Código que identifica a programação do congresso. PK da tabela.</remarks>
+    </column>
+    <column id="COL155" populated="true" UUID="8a2e223c-2700-44ab-b5ad-975f564ba87a" autoIncrement="false" autoIncrementSequenceName="informacoes_programas_data_seq" defaultValue="" name="data" nullable="0" physicalName="data" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks>Data do programa.</remarks>
+    </column>
+    <column id="COL156" populated="true" UUID="00ea3c63-faea-444a-8555-2a7e2613dc43" autoIncrement="false" autoIncrementSequenceName="informacoes_programas_horario_seq" defaultValue="" name="horario" nullable="0" physicalName="horario" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
+     <remarks>Horário programado.</remarks>
+    </column>
+    <column id="COL157" populated="true" UUID="20c55db3-6e29-455d-b017-c71e0cbffac0" autoIncrement="false" autoIncrementSequenceName="informacoes_programas_descricao_seq" defaultValue="" name="descricao" nullable="0" physicalName="descricao" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Descrição do programa.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB1533" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB1532" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB1534" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX158" populated="true" UUID="9571dfb7-c310-433a-9447-49667403f1ba" clustered="false" name="codigo_programas_pfk" physicalName="codigo_programas_pfk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC159" populated="true" UUID="cd54f752-2b89-45a0-8157-543679d74978" ascendingOrDescending="UNSPECIFIED" column-ref="COL154" name="codigo_programas" physicalName="codigo_programas" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL160" populated="true" UUID="0f420e13-7c6e-4cf4-b9b8-fe326177471e" deferrability="7" deleteRule="3" fk-table-ref="TAB121" fkCardinality="7" identifying="true" name="locais_telefones_locais_fk" physicalName="locais_telefones_locais_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP161" populated="true" UUID="1616a9c9-c8ee-417f-8979-48c677524eb5" fk-column-ref="COL122" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL162" populated="true" UUID="9110a38a-0c4a-4605-8249-ec9066934ff3" deferrability="7" deleteRule="3" fk-table-ref="TAB28" fkCardinality="7" identifying="false" name="locais_congressos_fk" physicalName="locais_congressos_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP163" populated="true" UUID="9d29731d-0b26-4c3f-adb2-6c9f4b426462" fk-column-ref="COL41" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL164" populated="true" UUID="0d4a2974-3563-40aa-8686-3dab0bb7e54a" deferrability="7" deleteRule="3" fk-table-ref="TAB127" fkCardinality="7" identifying="true" name="visitantes_telefones_visitantes_fk" physicalName="visitantes_telefones_visitantes_fk" pk-table-ref="TAB15" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP165" populated="true" UUID="382876e5-9db2-4708-b41b-59f868803d11" fk-column-ref="COL128" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL16" />
+   </relationship>
+   <relationship id="REL166" populated="true" UUID="a3cc6410-e426-4bc9-b165-f83027c21622" deferrability="7" deleteRule="3" fk-table-ref="TAB28" fkCardinality="6" identifying="false" name="visitantes_congressos_fk" physicalName="visitantes_congressos_fk" pk-table-ref="TAB15" pkCardinality="7" updateRule="3" >
+    <column-mapping id="CMP167" populated="true" UUID="5bfcaab0-48db-4d10-a467-d210c878c001" fk-column-ref="COL37" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL16" />
+   </relationship>
+   <relationship id="REL168" populated="true" UUID="30c43b10-1bc0-46f1-8850-0168853cbfd1" deferrability="7" deleteRule="3" fk-table-ref="TAB63" fkCardinality="7" identifying="true" name="congressos_patrocinio_fk" physicalName="congressos_patrocinio_fk" pk-table-ref="TAB28" pkCardinality="6" updateRule="3" >
+    <column-mapping id="CMP169" populated="true" UUID="2430d98c-b440-4e4d-b297-65bbfebfbd11" fk-column-ref="COL65" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL29" />
+   </relationship>
+   <relationship id="REL170" populated="true" UUID="9880121a-bd5d-4b3a-b9b6-6355730c6f29" deferrability="7" deleteRule="3" fk-table-ref="TAB28" fkCardinality="6" identifying="false" name="categorias_congressos_fk" physicalName="categorias_congressos_fk" pk-table-ref="TAB44" pkCardinality="7" updateRule="3" >
+    <column-mapping id="CMP171" populated="true" UUID="3d5d3234-23ef-46d7-bcac-d22a5ea8b81c" fk-column-ref="COL40" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL45" />
+   </relationship>
+   <relationship id="REL172" populated="true" UUID="99e638fe-1c83-47bb-b36e-8bef4e59ebbe" deferrability="7" deleteRule="3" fk-table-ref="TAB63" fkCardinality="6" identifying="true" name="patrocinadores_patrocinio_fk" physicalName="patrocinadores_patrocinio_fk" pk-table-ref="TAB50" pkCardinality="7" updateRule="3" >
+    <column-mapping id="CMP173" populated="true" UUID="bd3bba92-0a7a-40fe-a3a3-b6f27b8ae1a9" fk-column-ref="COL64" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL51" />
+   </relationship>
+   <relationship id="REL174" populated="true" UUID="ae867aa3-0a85-4305-a1d3-5889d88b655d" deferrability="7" deleteRule="3" fk-table-ref="TAB133" fkCardinality="7" identifying="true" name="organizadores_telefones_organizadores_fk" physicalName="organizadores_telefones_organizadores_fk" pk-table-ref="TAB71" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP175" populated="true" UUID="516b60d3-90f2-48a0-a496-a4cdf7df2764" fk-column-ref="COL134" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL72" />
+   </relationship>
+   <relationship id="REL176" populated="true" UUID="fcd9b824-1be5-4d50-af59-b2c81b044943" deferrability="7" deleteRule="3" fk-table-ref="TAB28" fkCardinality="7" identifying="false" name="organizadores_congressos_fk" physicalName="organizadores_congressos_fk" pk-table-ref="TAB71" pkCardinality="6" updateRule="3" >
+    <column-mapping id="CMP177" populated="true" UUID="eac0fd2c-83c5-440c-a0e6-dc65b68fec3a" fk-column-ref="COL38" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL72" />
+   </relationship>
+   <relationship id="REL178" populated="true" UUID="ad669d8a-fecb-48c4-8cf7-9d4cdaa68551" deferrability="7" deleteRule="3" fk-table-ref="TAB153" fkCardinality="7" identifying="true" name="programas_informacoes_programas_fk" physicalName="programas_informacoes_programas_fk" pk-table-ref="TAB77" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP179" populated="true" UUID="af2a47c5-68e5-41d6-b4f3-3d9a2dc4edd6" fk-column-ref="COL154" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL78" />
+   </relationship>
+   <relationship id="REL180" populated="true" UUID="17c1b7f0-6e40-46bb-ba2e-3e05a864ce0b" deferrability="7" deleteRule="3" fk-table-ref="TAB96" fkCardinality="7" identifying="true" name="programas_palestras_fk" physicalName="programas_palestras_fk" pk-table-ref="TAB77" pkCardinality="6" updateRule="3" >
+    <column-mapping id="CMP181" populated="true" UUID="16136ccd-89f4-4bb0-a899-56d82e65f97e" fk-column-ref="COL97" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL78" />
+   </relationship>
+   <relationship id="REL182" populated="true" UUID="91c173bc-5af2-4cf0-b303-c5dc3b2e2d11" deferrability="7" deleteRule="3" fk-table-ref="TAB28" fkCardinality="6" identifying="false" name="programas_congressos_fk" physicalName="programas_congressos_fk" pk-table-ref="TAB77" pkCardinality="7" updateRule="3" >
+    <column-mapping id="CMP183" populated="true" UUID="840e9083-a3e1-4c5b-b64c-9fa998158c53" fk-column-ref="COL36" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL78" />
+   </relationship>
+   <relationship id="REL184" populated="true" UUID="b3be1ae5-09d5-4431-aa11-2d4d3c78ee0e" deferrability="7" deleteRule="3" fk-table-ref="TAB139" fkCardinality="6" identifying="true" name="palestrantes_telefones_palestrantes_fk" physicalName="palestrantes_telefones_palestrantes_fk" pk-table-ref="TAB82" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP185" populated="true" UUID="f4701292-d310-41bc-a9c7-0b222cb038b6" fk-column-ref="COL140" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL83" />
+   </relationship>
+   <relationship id="REL186" populated="true" UUID="89037e40-b5d8-4767-9b3e-2170561cb29d" deferrability="7" deleteRule="3" fk-table-ref="TAB96" fkCardinality="6" identifying="true" name="palestrantes_palestras_fk" physicalName="palestrantes_palestras_fk" pk-table-ref="TAB82" pkCardinality="7" updateRule="3" >
+    <column-mapping id="CMP187" populated="true" UUID="0287b581-6fe4-40be-bc84-7d97803536be" fk-column-ref="COL98" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL83" />
+   </relationship>
+   <relationship id="REL188" populated="true" UUID="e970167f-30f4-4cad-a8bf-8102530726e6" deferrability="7" deleteRule="3" fk-table-ref="TAB145" fkCardinality="6" identifying="true" name="palestras_materiais_fk" physicalName="palestras_materiais_fk" pk-table-ref="TAB96" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP189" populated="true" UUID="89d1904a-5aab-422f-ad29-90ae06cd8c82" fk-column-ref="COL147" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL98" />
+    <column-mapping id="CMP190" populated="true" UUID="6f188af0-e538-4bcf-ac6e-f77dfcd693ad" fk-column-ref="COL146" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL97" />
+   </relationship>
+   <relationship id="REL191" populated="true" UUID="94f2f612-a544-4e0d-be72-bd985e99caf7" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="bairros_locais_fk" physicalName="bairros_locais_fk" pk-table-ref="TAB104" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP192" populated="true" UUID="d8a20b06-9dfb-4e7e-8a79-061b0096cea1" fk-column-ref="COL8" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL105" />
+   </relationship>
+   <relationship id="REL193" populated="true" UUID="8a3d52eb-6592-45eb-82dc-5cf1e948ac7e" deferrability="7" deleteRule="3" fk-table-ref="TAB15" fkCardinality="7" identifying="false" name="bairros_visitantes_fk" physicalName="bairros_visitantes_fk" pk-table-ref="TAB104" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP194" populated="true" UUID="0538ce2b-9c3e-48e4-b77a-b0b66c3dd1fc" fk-column-ref="COL23" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL105" />
+   </relationship>
+   <relationship id="REL195" populated="true" UUID="c46382ad-a246-43fb-9ff0-96e1ddaa801d" deferrability="7" deleteRule="3" fk-table-ref="TAB50" fkCardinality="7" identifying="false" name="bairros_patrocinadores_fk" physicalName="bairros_patrocinadores_fk" pk-table-ref="TAB104" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP196" populated="true" UUID="94323793-acf9-4461-9ed7-286e4b088ef2" fk-column-ref="COL58" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL105" />
+   </relationship>
+   <relationship id="REL197" populated="true" UUID="77b8be8a-cc98-48cd-9c8b-4f65f3416cee" deferrability="7" deleteRule="3" fk-table-ref="TAB82" fkCardinality="7" identifying="false" name="bairros_palestrantes_fk" physicalName="bairros_palestrantes_fk" pk-table-ref="TAB104" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP198" populated="true" UUID="48cb7c8f-f9cf-4c8d-8559-cbd3b831e40f" fk-column-ref="COL89" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL105" />
+   </relationship>
+   <relationship id="REL199" populated="true" UUID="56b66690-f18d-4db7-be5a-d8f9fbb51d03" deferrability="7" deleteRule="3" fk-table-ref="TAB104" fkCardinality="6" identifying="false" name="cidades_bairros_fk" physicalName="cidades_bairros_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP200" populated="true" UUID="529a442f-a345-4186-9f28-e09463863736" fk-column-ref="COL107" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL111" />
+   </relationship>
+   <relationship id="REL201" populated="true" UUID="dac014b7-d285-4a1f-848a-454ebcdee996" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="cidades_locais_fk" physicalName="cidades_locais_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP202" populated="true" UUID="52f3a21c-94f0-43fd-b02e-191ba4223e91" fk-column-ref="COL9" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL111" />
+   </relationship>
+   <relationship id="REL203" populated="true" UUID="aa535ce0-ed2c-4fb6-8dd1-87d8c2ee5552" deferrability="7" deleteRule="3" fk-table-ref="TAB15" fkCardinality="7" identifying="false" name="cidades_visitantes_fk" physicalName="cidades_visitantes_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP204" populated="true" UUID="7b762b67-931c-4802-8ad7-b97b86e7b882" fk-column-ref="COL24" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL111" />
+   </relationship>
+   <relationship id="REL205" populated="true" UUID="fedf6fb3-9b46-4347-93e5-4ca28fe7689d" deferrability="7" deleteRule="3" fk-table-ref="TAB50" fkCardinality="7" identifying="false" name="cidades_patrocinadores_fk" physicalName="cidades_patrocinadores_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP206" populated="true" UUID="3a92aa34-bc05-42a0-bcb9-538e011175df" fk-column-ref="COL59" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL111" />
+   </relationship>
+   <relationship id="REL207" populated="true" UUID="29d2afb8-650a-4a96-8999-5fee277feddb" deferrability="7" deleteRule="3" fk-table-ref="TAB82" fkCardinality="7" identifying="false" name="cidades_palestrantes_fk" physicalName="cidades_palestrantes_fk" pk-table-ref="TAB110" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP208" populated="true" UUID="bff81c9d-b186-4071-ad74-913dfd427c90" fk-column-ref="COL90" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL111" />
+   </relationship>
+   <relationship id="REL209" populated="true" UUID="4991df6d-2f85-41e0-89d3-4412bf4a00d5" deferrability="7" deleteRule="3" fk-table-ref="TAB110" fkCardinality="6" identifying="false" name="uf_cidades_fk" physicalName="uf_cidades_fk" pk-table-ref="TAB116" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP210" populated="true" UUID="57806919-9cf8-4321-9bd0-67a33cd4849f" fk-column-ref="COL113" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL117" />
+   </relationship>
+   <relationship id="REL211" populated="true" UUID="99de20a1-fa09-46ec-aadb-9c4562b42399" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="6" identifying="false" name="uf_locais_fk" physicalName="uf_locais_fk" pk-table-ref="TAB116" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP212" populated="true" UUID="579e15d0-d49c-462c-8444-a2bc0df7fc9b" fk-column-ref="COL10" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL117" />
+   </relationship>
+   <relationship id="REL213" populated="true" UUID="46541758-b56f-436b-ace3-d913a37575f7" deferrability="7" deleteRule="3" fk-table-ref="TAB15" fkCardinality="7" identifying="false" name="uf_visitantes_fk" physicalName="uf_visitantes_fk" pk-table-ref="TAB116" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP214" populated="true" UUID="4a3b3792-0288-44bc-82cf-e23932aaaf36" fk-column-ref="COL25" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL117" />
+   </relationship>
+   <relationship id="REL215" populated="true" UUID="1d19b164-f8fd-44c9-af36-6d483284dabb" deferrability="7" deleteRule="3" fk-table-ref="TAB50" fkCardinality="7" identifying="false" name="uf_patrocinadores_fk" physicalName="uf_patrocinadores_fk" pk-table-ref="TAB116" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP216" populated="true" UUID="30858bc0-ca49-4748-990a-a0de2f3abbed" fk-column-ref="COL60" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL117" />
+   </relationship>
+   <relationship id="REL217" populated="true" UUID="34c07ca5-c4e4-4c01-a1ba-f10641a0e50c" deferrability="7" deleteRule="3" fk-table-ref="TAB82" fkCardinality="7" identifying="false" name="uf_palestrantes_fk" physicalName="uf_palestrantes_fk" pk-table-ref="TAB116" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP218" populated="true" UUID="28ac516d-3fbc-4fb0-a047-91ef7073a39c" fk-column-ref="COL91" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL117" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="projeto"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="0.7071067811865475" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB1" x="961" y="26" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB15" x="676" y="339" bgColor="0xc7d0df" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB28" x="1435" y="390" bgColor="0xf6bcbc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB44" x="1907" y="36" bgColor="0xc8b7ea" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB50" x="703" y="823" bgColor="0xe6d794" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB63" x="968" y="671" bgColor="0xe6d794" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB71" x="1921" y="535" bgColor="0xc8dccc" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB77" x="1342" y="914" bgColor="0xdfedce" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB82" x="694" y="1094" bgColor="0xdfedce" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB96" x="1227" y="1125" bgColor="0xdfedce" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB104" x="62" y="115" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB110" x="65" y="319" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB116" x="62" y="561" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB121" x="513" y="22" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB127" x="33" y="766" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB133" x="1886" y="773" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB139" x="42" y="1153" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB145" x="1762" y="1162" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB153" x="1872" y="951" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL209" pkConnection="0.5062761506276151" fkConnection="0.37942122186495175" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL199" pkConnection="0.4919614147909968" fkConnection="0.5" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL191" pkConnection="0.494949494949495" fkConnection="0.5168539325842697" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL201" pkConnection="0.29292929292929293" fkConnection="0.7153558052434457" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL211" pkConnection="0.41025641025641024" fkConnection="0.8089887640449438" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL160" pkConnection="0.13857677902621723" fkConnection="0.5256410256410257" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL164" pkConnection="0.41046831955922863" fkConnection="0.5978552278820375" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL193" pkConnection="0.37373737373737376" fkConnection="0.7886178861788617" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL203" pkConnection="0.5858585858585859" fkConnection="0.15853658536585366" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL213" pkConnection="0.15384615384615385" fkConnection="0.9512195121951219" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL174" pkConnection="0.46616541353383456" fkConnection="0.5392156862745098" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL195" pkConnection="0.5959595959595959" fkConnection="0.7357723577235772" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL205" pkConnection="0.898989898989899" fkConnection="0.8617886178861789" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL215" pkConnection="0.7051282051282052" fkConnection="0.9552845528455285" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL172" pkConnection="0.319693094629156" fkConnection="0.39166666666666666" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="40"/>
+  <table-link relationship-ref="REL168" pkConnection="0.14583333333333334" fkConnection="0.25" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL197" pkConnection="0.7878787878787878" fkConnection="0.7422222222222222" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL207" pkConnection="0.6565656565656566" fkConnection="0.8266666666666667" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL217" pkConnection="0.8461538461538461" fkConnection="0.9244444444444444" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL184" pkConnection="0.36704119850187267" fkConnection="0.5" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL186" pkConnection="0.3408239700374532" fkConnection="0.5" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL188" pkConnection="0.6333333333333333" fkConnection="0.5" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL166" pkConnection="0.16666666666666666" fkConnection="0.7326388888888888" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL170" pkConnection="0.3838383838383838" fkConnection="0.7916666666666666" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL176" pkConnection="0.36363636363636365" fkConnection="0.8784722222222222" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL162" pkConnection="0.15355805243445692" fkConnection="0.9375" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL178" pkConnection="0.7070707070707071" fkConnection="0.23333333333333334" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL180" pkConnection="0.4375" fkConnection="0.5871794871794872" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL182" pkConnection="0.5253333333333333" fkConnection="0.39849624060150374" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="72"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
