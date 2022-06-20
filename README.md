@@ -1,4 +1,4 @@
-# Trabalho Final - Design e Desenvolvimento de Banco de Dados
+# Trabalho Final - Grupo 6 - Sistema Congresso - Design e Desenvolvimento de Banco de Dados
 
 Alunos: Luiz Gustavo Barcelos Fernandez Perez, Jarbas da Mata, Lucas Emannuel Ceciliotti
 
