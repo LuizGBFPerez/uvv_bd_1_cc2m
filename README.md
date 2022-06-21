@@ -9,5 +9,3 @@ Professor: Abrantes Araujo Silva Filho
 
 
 Este repositório foi criado para acomodar e organizar os arquivos criados para o trabalho final do semestre, que envolve a criação de um projeto lógico do Sistema Congresso e sua implementação em PostgreSQL. Espero que esteja satisfatório.
-
-O schema criado para o projeto é... 'projeto' na database 'postgres'.
